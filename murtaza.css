@@ -20,7 +20,7 @@ body {
     .mainName {
     color: white;
     position: fixed;
-    top: 5%;
+    top: 3%;
     left: 23%;
     font-family: "Knewave", system-ui;
     font-weight: 400;
@@ -127,8 +127,8 @@ body {
 .profileBox {
     margin-top: 0;
     margin-left: 5%;
-    height: 30vh;
-    width: 90vw;
+    height: 175px;
+    width: 325px;
     padding: 0;
 
     visibility: hidden;
@@ -154,12 +154,23 @@ body {
     background-color: rgb(231, 231, 231);
     border-top-right-radius: 50px;
     border: 1.5px solid orange;
-    box-shadow: 3px 3px 4px rgb(97, 97, 97);
+    box-shadow: 20px 20px rgb(255, 172, 47);
     align-self: end;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
 }
 
+.profilePic {
+    width: 75px;
+    height: 75px;
+    visibility: visible;
+    margin-left: 7%;
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px solid orange;
+}
+
+@media(min-width: 768px){
 .profilePic {
     visibility: visible;
     margin-left: 7%;
@@ -169,11 +180,12 @@ body {
     height: 125px;
     border: 1.5px solid orange;
 }
+}
 
 @media (min-width: 768px){
     .profileBox {
-        width: 60vw;
-        height: 45vh;
+        width: 1000px;
+        height: 500px;
     }
     .profilePic {
         height: 150px;
@@ -181,3 +193,249 @@ body {
     }
 }
 
+@media (min-width: 768px){
+.circle1 {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 40%;
+    left: 24%;
+    border-radius: 50%;
+    background-color: rgba(0, 255, 255, 0.8);
+}
+}
+
+.innerCircle1 {
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+    border-radius: 50%;
+    background-color: rgba(255, 153, 0, 0.8);
+    animation: 2s ripple linear infinite;
+}
+
+@media (min-width: 768px){
+
+.circle2 {
+    height: 140px;
+    width: 140px;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 55%;
+    left: 75%;
+    border-radius: 50%;
+    background-color: rgba(0, 255, 255, 0.8);
+}
+
+.circle3 {
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 30%;
+    left: 60%;
+    border-radius: 50%;
+    background-color: rgba(0, 255, 255, 0.8);
+}
+
+.circle4 {
+    height: 170px;
+    width: 170px;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10%;
+    right: 2%;
+    border-radius: 50%;
+    background-color: rgba(0, 255, 255, 0.8);
+}
+
+.circle5 {
+    height: 110px;
+    width: 110px;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 8%;
+    left: 82%;
+    border-radius: 50%;
+    background-color: rgba(0, 255, 255, 0.8);
+}
+
+}
+
+.innerCircle2 {
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+    border-radius: 50%;
+    background-color: rgba(255, 153, 0, 0.8);
+    animation: 4s ripple linear infinite;
+}
+
+.innerCircle3 {
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+    border-radius: 50%;
+    background-color: rgba(255, 153, 0, 0.8);
+    animation: 1s ripple linear infinite;
+}
+
+.innerCircle4 {
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+    border-radius: 50%;
+    background-color: rgba(255, 153, 0, 0.8);
+    animation: 2s ripple linear infinite;
+}
+
+.innerCircle5 {
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+    border-radius: 50%;
+    background-color: rgba(255, 153, 0, 0.8);
+    animation: 3s ripple linear infinite;
+}
+@keyframes ripple {
+    0% { height: 0%; width: 0%;}
+    100% { width: 100%; height: 100%;}
+}
+
+@media (min-width: 768px){
+
+.circle6 {
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 35%;
+    left: 8%;
+    border-radius: 50%;
+    background-color: rgba(0, 255, 255, 0.8);
+}
+
+.circle7 {
+    height: 155px;
+    width: 155px;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 18%;
+    left: 35%;
+    border-radius: 50%;
+    background-color: rgba(0, 255, 255, 0.8);
+}
+
+.circle8 {
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 82%;
+    right: 5%;
+    border-radius: 50%;
+    background-color: rgba(0, 255, 255, 0.8);
+}
+
+}
+
+.innerCircle6 {
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+    border-radius: 50%;
+    background-color: rgba(255, 153, 0, 0.8);
+    animation: 5s ripple linear infinite;
+}
+
+.innerCircle7 {
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+    border-radius: 50%;
+    background-color: rgba(255, 153, 0, 0.8);
+    animation: 1.7s ripple linear infinite;
+}
+
+.innerCircle8 {
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+    border-radius: 50%;
+    background-color: rgba(255, 153, 0, 0.8);
+    animation: 4s ripple linear infinite;
+}
+
+
+.viewBox {
+    overflow: hidden;
+    z-index: 4;
+    position: fixed;
+    right: 10%;
+    top: 22%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 50%;
+    border-radius: 50px;
+    background-color: rgba(240,248,255,0.9);
+}
+
+
+@media (min-width: 768px){
+.viewBox {
+    right: 12%;
+    top: 5%;
+    width: 1000px;
+    height: 90%;
+}
+}
+.innerViewBox {
+    z-index: 6;
+    border-radius: 50px;
+    background-color: aquamarine;
+    height: 98%;
+    width: 98%;
+}
+
+.rotatingBorder {
+    z-index: 5;
+    height: 200vh;
+    position: absolute;
+    visibility: visible;
+    width: 10%;
+    background-image: linear-gradient(rgba(255, 165, 0, 0.8), rgba(127,255,212, 0.8));
+
+    animation: 4s rotateGradient linear infinite;
+}
+
+@keyframes rotateGradient {
+    0% { transform: rotate(0deg); filter: hue-rotate(0deg)}
+    100% {transform: rotate(360deg); filter: hue-rotate(360deg)}
+}
