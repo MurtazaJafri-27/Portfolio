@@ -166,6 +166,8 @@ body {
     position: absolute;
     border-radius: 50%;
     border: 1.5px solid orange;
+
+    transition: 0.3s ease-in-out all;
 }
 
 @media(min-width: 768px){
@@ -579,6 +581,10 @@ body {
 }
 .profileBox:has(#upArrow:active){
     height: 400px;
+}
+
+.profileBoxInner:has(#upArrow:active) .profilePic{
+    margin-bottom: -3%;
 }
 }
 
