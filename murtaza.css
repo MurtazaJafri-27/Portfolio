@@ -20,8 +20,8 @@ body {
     .mainName {
     color: white;
     position: fixed;
-    top: 3%;
-    left: 23%;
+    top: 2%;
+    left: 26%;
     font-family: "Knewave", system-ui;
     font-weight: 400;
     font-style: normal;
@@ -36,26 +36,22 @@ body {
 @media (min-width: 768px){
 .mainName {
     color: white;
-    margin-left: 5%;
-    margin-bottom: 0;
+    margin: 5%;
+    position: absolute;
     font-family: "Knewave", system-ui;
     font-weight: 400;
     font-style: normal;
+    height: 500px;
+    max-width: 450px;
     line-height: 1;
     text-shadow: 3px 3px 2px grey;
-    cursor: default;
+    user-select: none;
     z-index: 4;
 
     transition: transform 0.2s ease-in;
 }
 }
 
-
-@media (min-width: 768px){
-.mainName  {
-    font-size: 600%;
-}
-}
 
 @media (max-width: 767px){
     .vignette-box {
@@ -143,7 +139,7 @@ body {
     box-shadow: 5px 5px 3px orange;
     z-index: 4;
 
-    transition: 0.2s ease-in-out all;
+    transition: 0.3s ease-in-out all;
 
 }
 
@@ -151,7 +147,7 @@ body {
     visibility: visible;
     width: 100%;
     height: 80%;
-    background-color: rgb(231, 231, 231);
+    background-color: rgb(255, 255, 255);
     border-top-right-radius: 50px;
     border: 1.5px solid orange;
     box-shadow: 20px 20px rgb(255, 172, 47);
@@ -165,6 +161,7 @@ body {
     height: 75px;
     visibility: visible;
     margin-left: 7%;
+    user-select: none;
     position: absolute;
     border-radius: 50%;
     border: 1.5px solid orange;
@@ -185,8 +182,13 @@ body {
 @media (min-width: 768px){
     .profileBox {
         width: 1000px;
-        height: 500px;
+        height: 320px;
     }
+
+    .profileBox:hover {
+        height: 450px;
+    }
+
     .profilePic {
         height: 150px;
         width: 150px;
@@ -284,7 +286,7 @@ body {
     visibility: visible;
     border-radius: 50%;
     background-color: rgba(255, 153, 0, 0.8);
-    animation: 4s ripple linear infinite;
+    animation: 2s ripple linear infinite;
 }
 
 .innerCircle3 {
@@ -311,11 +313,108 @@ body {
     visibility: visible;
     border-radius: 50%;
     background-color: rgba(255, 153, 0, 0.8);
-    animation: 3s ripple linear infinite;
+    animation: 1.2s ripple linear infinite;
 }
 @keyframes ripple {
     0% { height: 0%; width: 0%;}
     100% { width: 100%; height: 100%;}
+}
+
+
+@media (max-width: 767px){
+
+.circle2 {
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 5%;
+    left: 5%;
+    border-radius: 50%;
+    background-color: rgba(0, 255, 255, 0.8);
+}
+
+.circle3 {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20%;
+    right: 5%;
+    border-radius: 50%;
+    background-color: rgba(0, 255, 255, 0.8);
+}
+
+.circle4 {
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 40%;
+    left: 7%;
+    border-radius: 50%;
+    background-color: rgba(0, 255, 255, 0.8);
+}
+
+.circle5 {
+    height: 55px;
+    width: 55px;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 80%;
+    left: 82%;
+    border-radius: 50%;
+    background-color: rgba(0, 255, 255, 0.8);
+}
+
+}
+
+.innerCircle2 {
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+    border-radius: 50%;
+    background-color: rgba(255, 153, 0, 0.8);
+    animation: 2s ripple linear infinite;
+}
+
+.innerCircle3 {
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+    border-radius: 50%;
+    background-color: rgba(255, 153, 0, 0.8);
+    animation: 1s ripple linear infinite;
+}
+
+.innerCircle4 {
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+    border-radius: 50%;
+    background-color: rgba(255, 153, 0, 0.8);
+    animation: 2s ripple linear infinite;
+}
+
+.innerCircle5 {
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+    border-radius: 50%;
+    background-color: rgba(255, 153, 0, 0.8);
+    animation: 1.2s ripple linear infinite;
 }
 
 @media (min-width: 768px){
@@ -370,7 +469,7 @@ body {
     visibility: visible;
     border-radius: 50%;
     background-color: rgba(255, 153, 0, 0.8);
-    animation: 5s ripple linear infinite;
+    animation: 2.2s ripple linear infinite;
 }
 
 .innerCircle7 {
@@ -396,7 +495,7 @@ body {
     overflow: hidden;
     z-index: 4;
     position: fixed;
-    right: 10%;
+    right: 12%;
     top: 22%;
     display: flex;
     justify-content: center;
@@ -438,4 +537,32 @@ body {
 @keyframes rotateGradient {
     0% { transform: rotate(0deg); filter: hue-rotate(0deg)}
     100% {transform: rotate(360deg); filter: hue-rotate(360deg)}
+}
+
+@media (min-width:768px){
+    .upArrow {
+        visibility: hidden;
+    }
+    #upArrow {
+        visibility: hidden;
+    }
+}
+
+@media (max-width: 767px){
+.upArrow {
+    height: 24px;
+    width: 22px;
+    position: absolute;
+    top: 27%;
+    right: 10%;
+    visibility: visible;
+
+    animation: 2s rotateGradient linear infinte;
+}
+#upArrow {
+    visibility: hidden;
+}
+.profileBox:has(#upArrow:active){
+    height: 300px;
+}
 }
