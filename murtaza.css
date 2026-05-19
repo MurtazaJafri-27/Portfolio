@@ -145,6 +145,9 @@ body {
 
 .profileBoxInner {
     visibility: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 80%;
     background-color: rgb(255, 255, 255);
@@ -557,12 +560,29 @@ body {
     right: 10%;
     visibility: visible;
 
-    animation: 2s rotateGradient linear infinte;
+    animation: 6s hueRotate linear infinite;
 }
+
+@keyframes hueRotate {
+    0% { filter: hue-rotate(0deg);}
+    100% { filter: hue-rotate(360deg);}
+}
+
 #upArrow {
     visibility: hidden;
 }
 .profileBox:has(#upArrow:active){
     height: 300px;
+}
+}
+
+@media (min-width: 768px){
+nav {
+    margin-top: 10%;
+    margin-left: 4%;
+    height: 35px;
+    width: 70%;
+    border: 2px solid orange;
+    box-shadow: 2px 2px 4px grey;
 }
 }
