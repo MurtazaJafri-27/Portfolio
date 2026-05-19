@@ -569,6 +569,8 @@ body {
     right: 5%;
     visibility: visible;
     filter: hue-rotate(260deg);
+    -webkit-touch-callout: none;
+    user-select: none;
 }
 
 @keyframes hueRotate {
