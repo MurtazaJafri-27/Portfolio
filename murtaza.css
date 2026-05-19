@@ -568,7 +568,7 @@ body {
     bottom: 5%;
     right: 5%;
     visibility: visible;
-    filter: hue-rotate(260deg);
+    filter: hue-rotate(300deg);
     -webkit-touch-callout: none;
     user-select: none;
 }
@@ -580,12 +580,17 @@ body {
 
 #upArrow {
     visibility: hidden;
+    width: 20px;
+    height: 20px;
+bottom: 5%;
+right: 5%;
+position: absolute;
 }
-.profileBox:has(#upArrow:active){
+.profileBox:has(#upArrow:checked){
     height: 400px;
 }
 
-.profileBox:has(#upArrow:active) .profilePic{
+.profileBox:has(#upArrow:checked) .profilePic{
     transform: translateY(5vh);
 }
 }
@@ -641,6 +646,7 @@ nav h2 {
         padding: 1%;
         border-top-right-radius: 20px;
         overflow-x: auto;
+        overflow-y: hidden;
     z-index: 4;
     margin-left: 20%;
     margin-top: 3%;
