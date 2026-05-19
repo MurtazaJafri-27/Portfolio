@@ -636,7 +636,9 @@ nav h2 {
 
 @media(max-width: 767px){
     nav {
+        padding: 1%;
         border-top-right-radius: 20px;
+        overflow-x: auto;
     z-index: 4;
     margin-left: 20%;
     margin-top: 3%;
@@ -651,7 +653,6 @@ nav h2 {
 }
 
 .navLine {
-    margin-left: 5%;
     border-radius: 50px;
     margin-top: 3%;
     width: 90%;
