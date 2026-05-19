@@ -583,8 +583,8 @@ body {
     height: 400px;
 }
 
-.profileBoxInner:has(#upArrow:active) .profilePic{
-    margin-bottom: -3%;
+.profileBox:has(#upArrow:active) .profilePic{
+    transform: translateY(5vh);
 }
 }
 
