@@ -69,7 +69,7 @@ body {
     font-family: "Knewave", system-ui;
     font-weight: 400;
     font-style: normal;
-    font-size: 300%;
+    font-size: 400%;
     line-height: 1;
     user-select: none;
     z-index: 4;
@@ -144,9 +144,6 @@ body {
 }
 }
 
-.socialDiv i {
-    transition: 0.3s ease-in-out all;
-}
 /* PROFILE BOX */
 
 .profileBox {
@@ -201,7 +198,15 @@ body {
     flex-direction: column;
     align-items: center;
     color: white;
-    background-color: rgb(0, 0, 0);
+     background-color: rgba(255, 109, 109, 0.8);
+    background-size: 300%;
+    backdrop-filter: blur(20px);
+    box-shadow:  2px 2px rgb(196, 195, 195);
+}
+
+@keyframes hueShift {
+    0% { filter: hue-rotate(0deg);}
+    100% {filter: hue-rotate(360deg)};
 }
 
 .socialBox {
@@ -211,7 +216,8 @@ body {
     flex-direction: column;
     color: white;
     align-items: center;
-    background-color: rgb(50, 81, 255);
+    background-color: rgba(255, 109, 109, 0.8);
+    box-shadow:  2px 2px rgb(196, 195, 195);
 }
 
 .statusBox {
@@ -222,7 +228,8 @@ body {
     flex-direction: column;
     align-items: center;
     color: white;
-    background-color: rgb(50, 255, 60);
+    background-color: rgba(255, 109, 109, 0.8);
+    box-shadow:  2px 2px rgb(196, 195, 195);
 }
 
 .socialDiv {
@@ -234,8 +241,9 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    background-color: rgb(50, 81, 255);
+    background-color: rgba(255, 109, 109, 0.8);
 }
+
 
 .aboutMe h1 {
     font-size: 80%;
@@ -257,6 +265,9 @@ body {
 .profilePic {
     width: 75px;
     height: 75px;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
     visibility: visible;
     margin-left: 7%;
     user-select: none;
@@ -297,6 +308,7 @@ body {
     border-radius: 50%;
     width: 125px;
     height: 125px;
+    object-fit: cover;
     border: 1.5px solid orange;
     box-shadow: 2px 2px 2px rgb(255, 157, 45);
 }
@@ -308,7 +320,7 @@ body {
 .socialBox {
     height: 60%;
     width: 30%;
-    box-shadow: 3px 3px rgb(16, 46, 211);
+    box-shadow:  3px 3px rgb(196, 195, 195);
 }
 
 .aboutMe {
@@ -320,11 +332,11 @@ body {
 .statusBox {
     width: 25%;
     height: 60%;
-    box-shadow:  3px 3px rgb(22, 187, 31);
+    box-shadow:  3px 3px rgb(196, 195, 195);
 }
 
 .boxes div {
-    border-radius: 50px;
+    border-radius: 25px;
 }
 
 .socialDiv i {
@@ -345,7 +357,7 @@ body {
   font-weight: 700;
   font-style: normal;
   color: transparent;
-    background: linear-gradient(90deg,rgb(0, 238, 255),blue,cyan,rgb(0, 132, 255));
+    background: linear-gradient(90deg,blue,cyan,blue);
     background-size: 300%;
     background-clip: text;
 
@@ -408,7 +420,6 @@ nav h2 {
   font-family: "Madimi One", sans-serif;
   font-weight: 700;
   font-style: normal;
-  text-shadow: 1px 1px rgb(47, 231, 255);
 }
 
 
@@ -444,6 +455,12 @@ nav h2 {
     100% { transform: translateY(0);}
 }
 
+.innerViewBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .viewBox {
     overflow: hidden;
     z-index: 4;
@@ -457,6 +474,83 @@ nav h2 {
     height: 50%;
     border-radius: 50px;
     background-color: rgba(240,248,255,0.9);
+}
+
+.artworkView {
+    z-index: 7;
+    visibility: hidden;
+    border-radius: 25px;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    height: 90%;
+
+    transition: 0.3s ease-in-out all;
+}
+
+.artworkView h1 {
+    margin: 0;
+    margin-bottom: 2%;
+    text-shadow: 2px 2px orange;
+    font-size: 200%;
+  font-family: "Madimi One", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+
+  color: transparent;
+  background: linear-gradient(90deg, rgba(255, 109, 109, 0.8), rgba(255, 255, 255, 0.8), rgba(255, 109, 109, 0.8));
+  background-size: 250%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+
+  animation: statusHueShift 8s linear infinite;
+}
+
+.artDiv {
+    border: 2px solid orange;
+    border-radius: 25px;
+    height: 80%;
+    width: 90%;
+    padding-right: 1%;
+    background-color: rgba(255, 109, 109, 0.8);
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.popOutAni {
+    animation: popOut 3s linear forwards;
+}
+
+.popInAni {
+    animation: popIn 3s linear forwards;
+}
+
+@keyframes popOut {
+    50% { transform:  scale(1.025);}
+    100% { transform: scale(0);}
+}
+
+@keyframes popIn {
+    100% { transform: scale(1);}
+}
+
+.artDiv img {
+    margin-top: 2%;
+    margin-left: 2%;
+    border: 2px solid orange;
+    box-shadow: 2px 2px grey;
+    border-radius: 15px;
+}
+
+.artDiv img:hover {
+    cursor: pointer;
+    transform: scale(1.025);
+    border: 2px solid red;
 }
 
 
@@ -504,16 +598,26 @@ nav h2 {
 }
 
 @media (max-width: 767px){
-.upArrow {
+
+    .artworkView h1 {
+        font-size: 150%;
+    }
+    .artDiv img {
+        height: 30%;
+        width: auto;
+    }
+.upArrowImg {
     height: 24px;
     width: 22px;
     position: absolute;
     bottom: 5%;
     right: 5%;
     visibility: visible;
-    filter: hue-rotate(300deg);
+    filter: hue-rotate(250deg);
     -webkit-touch-callout: none;
     user-select: none;
+
+    transition: 0.3s ease-in all;
 }
 
 @keyframes hueRotate {
@@ -528,6 +632,10 @@ nav h2 {
 bottom: 5%;
 right: 5%;
 position: absolute;
+}
+
+#upArrow:checked + label .upArrowImg {
+   transform: rotate(180deg);
 }
 
 .profileBox:has(#upArrow:checked){
@@ -581,6 +689,8 @@ nav {
     margin-left: 5%;
     margin-top: 2%;
     visibility: visible;
+    border-radius: 25px;
+    box-shadow: 3px 3px 2px goldenrod;
     height: 50px;
     width: 53%;
     border: 2px solid orange;
@@ -617,18 +727,20 @@ nav {
 }
 
 nav h2 {
+    cursor: pointer;
     color: rgba(255, 153, 0, 0.8);
 }
 }
 
 @media(max-width: 767px){
     nav {
+        box-shadow: 2px 2px 1px goldenrod;
         padding: 1%;
-        border-top-right-radius: 20px;
+        border-radius: 15px;
         overflow-x: auto;
         overflow-y: hidden;
     z-index: 4;
-    margin-left: 20%;
+    margin-left: 15%;
     margin-top: 3%;
     visibility: visible;
     height: 25px;

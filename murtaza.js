@@ -37,4 +37,16 @@ document.addEventListener('DOMContentLoaded', function() {
         circle.appendChild(innerCircle);
         circleContainer.appendChild(circle);
     }
+
+    const artworkButton = document.getElementById('artworkButton');
+    const artworkContent = document.querySelector('.artworkView');
+
+    artworkButton.addEventListener('click',() => {
+        if(artworkContent.style.visibility == 'visible'){
+           artworkContent.style.visibility = 'hidden';
+        }
+        else {
+             artworkContent.style.visibility = 'visible';
+        }
+    })
 })
