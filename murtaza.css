@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: rgba(255, 153, 0, 0.8);
+    background: linear-gradient(rgb(255, 181, 44), orange);
     display: flex;
     justify-content: center;
     overflow-y: hidden;
@@ -14,6 +14,15 @@ body {
     }
 }
 
+.circleContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+}
+
 /* NAME TITLE & VIGNETTE*/
 
 @media (max-width: 767px){
@@ -21,7 +30,7 @@ body {
     color: white;
     position: fixed;
     top: 2%;
-    left: 26%;
+    left: 25%;
     font-family: "Knewave", system-ui;
     font-weight: 400;
     font-style: normal;
@@ -117,6 +126,9 @@ body {
 }
 }
 
+.socialDiv i {
+    transition: 0.3s ease-in-out all;
+}
 /* PROFILE BOX */
 
 .profileBox {
@@ -157,6 +169,73 @@ body {
     border-top-right-radius: 50px;
 }
 
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    width: 92%;
+    height: 60%;
+    background-color: rgb(255, 255, 255)
+}
+.aboutMe {
+    margin-top: 2%;
+    margin-left: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background-color: rgb(0, 0, 0);
+}
+
+.socialBox {
+    margin-top: 2%;
+    margin-left: 2%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    background-color: rgb(50, 81, 255);
+}
+
+.statusBox {
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background-color: rgb(50, 255, 60);
+}
+
+.socialDiv {
+    visibility: hidden;
+    border-radius: 50px;
+    width: 85%;
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(50, 81, 255);
+}
+
+.aboutMe h1 {
+    font-size: 80%;
+}
+
+.socialBox h1 {
+    font-size: 80%;
+}
+
+.statusBox h1 {
+    font-size: 80%;
+}
+
+.statusBox p {
+    visibility: hidden;
+    transition: 0.3s ease-in-out all;
+}
+
 .profilePic {
     width: 75px;
     height: 75px;
@@ -170,6 +249,27 @@ body {
     transition: 0.3s ease-in-out all;
 }
 
+@media (max-width: 767px){
+    .boxes {
+        border-radius: 25px;
+    }
+    .socialBox {
+        height: 40px;
+        width: 80px;
+        border-radius: 25px;
+    }
+    .statusBox {
+        height: 40px;
+        width: 80px;
+        border-radius: 25px;
+    }
+    .aboutMe {
+        height: 40px;
+        width: 100px;
+        border-radius: 25px;
+    }
+}
+
 @media(min-width: 768px){
 .profilePic {
     visibility: visible;
@@ -180,7 +280,78 @@ body {
     width: 125px;
     height: 125px;
     border: 1.5px solid orange;
+    box-shadow: 2px 2px 2px rgb(255, 157, 45);
 }
+
+.boxes {
+    overflow-y: hidden;
+}
+
+.socialBox {
+    height: 60%;
+    width: 30%;
+    box-shadow: 3px 3px rgb(16, 46, 211);
+}
+
+.aboutMe {
+    height: 60%;
+    width: 35%;
+    box-shadow:  3px 3px rgb(196, 195, 195);
+}
+
+.statusBox {
+    width: 25%;
+    height: 60%;
+    box-shadow:  3px 3px rgb(22, 187, 31);
+}
+
+.boxes div {
+    border-radius: 50px;
+}
+
+.socialDiv i {
+    color: white;
+    font-size: 50px;
+}
+.profileBoxInner:hover .aboutMe {
+    height: 90%;
+    width: 35%;
+}
+.profileBox:hover .socialBox .socialDiv {
+    visibility: visible;
+}
+.profileBoxInner:hover .statusBox p {
+    font-size: 100%;
+    visibility: visible;
+     font-family: "Coiny", system-ui;
+  font-weight: 700;
+  font-style: normal;
+  color: transparent;
+    background: linear-gradient(90deg,rgb(0, 238, 255),blue,cyan,rgb(0, 132, 255));
+    background-size: 300%;
+    background-clip: text;
+
+    animation: statusHueShift 5s linear infinite;
+}
+
+.aboutMe h1 {
+    margin-top: 6%;
+    font-size: 150%;
+}
+
+.socialBox h1 {
+    font-size: 150%;
+}
+
+.statusBox h1 {
+    font-size: 150%;
+}
+
+}
+
+@keyframes statusHueShift {
+    0% { background-position: 0%;}
+    100% { background-position: 300%;}
 }
 
 @media (min-width: 768px){
@@ -205,307 +376,61 @@ body {
     }
 }
 
-@media (min-width: 768px){
-.circle1 {
-    height: 100px;
-    width: 100px;
-    position: absolute;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 40%;
-    left: 24%;
-    border-radius: 50%;
-    background-color: rgba(0, 255, 255, 0.8);
-}
+
+nav h2 {
+    font-size: 125%;
+  font-family: "Madimi One", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
-.innerCircle1 {
-    height: 100%;
-    width: 100%;
-    visibility: visible;
-    border-radius: 50%;
-    background-color: rgba(255, 153, 0, 0.8);
-    animation: 2s ripple linear infinite;
+.boxesText {
+    margin-top: 8%;
+    font-size: 125%;
+  font-family: "Madimi One", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-shadow: 1px 1px rgb(47, 231, 255);
 }
 
-@media (min-width: 768px){
 
-.circle2 {
-    height: 140px;
-    width: 140px;
-    position: absolute;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 55%;
-    left: 75%;
-    border-radius: 50%;
-    background-color: rgba(0, 255, 255, 0.8);
-}
-
-.circle3 {
-    height: 80px;
-    width: 80px;
-    position: absolute;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 30%;
-    left: 60%;
-    border-radius: 50%;
-    background-color: rgba(0, 255, 255, 0.8);
-}
-
-.circle4 {
-    height: 170px;
-    width: 170px;
-    position: absolute;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 10%;
-    right: 2%;
-    border-radius: 50%;
-    background-color: rgba(0, 255, 255, 0.8);
-}
-
-.circle5 {
-    height: 110px;
-    width: 110px;
-    position: absolute;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 8%;
-    left: 82%;
-    border-radius: 50%;
-    background-color: rgba(0, 255, 255, 0.8);
-}
-
-}
-
-.innerCircle2 {
-    height: 100%;
-    width: 100%;
-    visibility: visible;
-    border-radius: 50%;
-    background-color: rgba(255, 153, 0, 0.8);
-    animation: 2s ripple linear infinite;
-}
-
-.innerCircle3 {
-    height: 100%;
-    width: 100%;
-    visibility: visible;
-    border-radius: 50%;
-    background-color: rgba(255, 153, 0, 0.8);
-    animation: 1s ripple linear infinite;
-}
-
-.innerCircle4 {
-    height: 100%;
-    width: 100%;
-    visibility: visible;
-    border-radius: 50%;
-    background-color: rgba(255, 153, 0, 0.8);
-    animation: 2s ripple linear infinite;
-}
-
-.innerCircle5 {
-    height: 100%;
-    width: 100%;
-    visibility: visible;
-    border-radius: 50%;
-    background-color: rgba(255, 153, 0, 0.8);
-    animation: 1.2s ripple linear infinite;
-}
 @keyframes ripple {
     0% { height: 0%; width: 0%;}
     100% { width: 100%; height: 100%;}
 }
 
 
-@media (max-width: 767px){
+.innerCircle {
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+    border-radius: 50%;
+    background-color: rgba(255, 123, 0, 0.8);
+}
 
-.circle2 {
-    height: 70px;
-    width: 70px;
+.circle {
     position: absolute;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 5%;
-    left: 5%;
     border-radius: 50%;
-    background-color: rgba(0, 255, 255, 0.8);
+    background-color:  rgba(255, 153, 0, 0.8);
 }
 
-.circle3 {
-    height: 40px;
-    width: 40px;
-    position: absolute;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 20%;
-    right: 5%;
-    border-radius: 50%;
-    background-color: rgba(0, 255, 255, 0.8);
+@keyframes upNDown {
+    0% { transform: translateY(0);}
+    50% { transform: translateY(var(--transVar));}
+    75% { transform: translateY(0);}
+    90% { transform: translateY(calc(var(--transVar) + 5px));}
+    100% { transform: translateY(0);}
 }
-
-.circle4 {
-    height: 70px;
-    width: 70px;
-    position: absolute;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 40%;
-    left: 7%;
-    border-radius: 50%;
-    background-color: rgba(0, 255, 255, 0.8);
-}
-
-.circle5 {
-    height: 55px;
-    width: 55px;
-    position: absolute;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 80%;
-    left: 82%;
-    border-radius: 50%;
-    background-color: rgba(0, 255, 255, 0.8);
-}
-
-}
-
-.innerCircle2 {
-    height: 100%;
-    width: 100%;
-    visibility: visible;
-    border-radius: 50%;
-    background-color: rgba(255, 153, 0, 0.8);
-    animation: 2s ripple linear infinite;
-}
-
-.innerCircle3 {
-    height: 100%;
-    width: 100%;
-    visibility: visible;
-    border-radius: 50%;
-    background-color: rgba(255, 153, 0, 0.8);
-    animation: 1s ripple linear infinite;
-}
-
-.innerCircle4 {
-    height: 100%;
-    width: 100%;
-    visibility: visible;
-    border-radius: 50%;
-    background-color: rgba(255, 153, 0, 0.8);
-    animation: 2s ripple linear infinite;
-}
-
-.innerCircle5 {
-    height: 100%;
-    width: 100%;
-    visibility: visible;
-    border-radius: 50%;
-    background-color: rgba(255, 153, 0, 0.8);
-    animation: 1.2s ripple linear infinite;
-}
-
-@media (min-width: 768px){
-
-.circle6 {
-    height: 120px;
-    width: 120px;
-    position: absolute;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 35%;
-    left: 8%;
-    border-radius: 50%;
-    background-color: rgba(0, 255, 255, 0.8);
-}
-
-.circle7 {
-    height: 155px;
-    width: 155px;
-    position: absolute;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 18%;
-    left: 35%;
-    border-radius: 50%;
-    background-color: rgba(0, 255, 255, 0.8);
-}
-
-.circle8 {
-    height: 70px;
-    width: 70px;
-    position: absolute;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 82%;
-    right: 5%;
-    border-radius: 50%;
-    background-color: rgba(0, 255, 255, 0.8);
-}
-
-}
-
-.innerCircle6 {
-    height: 100%;
-    width: 100%;
-    visibility: visible;
-    border-radius: 50%;
-    background-color: rgba(255, 153, 0, 0.8);
-    animation: 2.2s ripple linear infinite;
-}
-
-.innerCircle7 {
-    height: 100%;
-    width: 100%;
-    visibility: visible;
-    border-radius: 50%;
-    background-color: rgba(255, 153, 0, 0.8);
-    animation: 1.7s ripple linear infinite;
-}
-
-.innerCircle8 {
-    height: 100%;
-    width: 100%;
-    visibility: visible;
-    border-radius: 50%;
-    background-color: rgba(255, 153, 0, 0.8);
-    animation: 4s ripple linear infinite;
-}
-
 
 .viewBox {
     overflow: hidden;
     z-index: 4;
     position: fixed;
-    right: 12%;
+    right: 10%;
     top: 22%;
     display: flex;
     justify-content: center;
@@ -586,12 +511,49 @@ bottom: 5%;
 right: 5%;
 position: absolute;
 }
+
 .profileBox:has(#upArrow:checked){
     height: 400px;
 }
 
 .profileBox:has(#upArrow:checked) .profilePic{
     transform: translateY(5vh);
+}
+
+.profileBox:has(#upArrow:checked) .aboutMe {
+    top: 35%;
+    left: 5%;
+    width: 100px;
+    height: 150px;
+}
+.profileBox:has(#upArrow:checked) .statusBox {
+    height: 100px;
+}
+.profileBox:has(#upArrow:checked) .socialBox {
+    height: 100px;
+}
+.profileBox:has(#upArrow:checked) .socialBox .socialDiv {
+    visibility: visible;
+    color: white;
+    font-size: 25px;
+}
+.profileBox:has(#upArrow:checked) .socialBox .socialDiv i {
+    color: white;
+}
+.profileBox:has(#upArrow:checked) .statusBox p {
+    visibility: visible;
+    margin-top: -5%;
+    margin-left: 20%;
+    font-size: 80%;
+    font-family: "Coiny", system-ui;
+  font-weight: 700;
+  font-style: normal;
+  color: transparent;
+    background: linear-gradient(90deg,rgb(0, 238, 255),blue,cyan,rgb(0, 132, 255));
+    background-size: 300%;
+    background-clip: text;
+
+    animation: statusHueShift 5s linear infinite;
 }
 }
 
@@ -672,7 +634,6 @@ nav h2 {
     margin-left: 5%;
     color: rgba(255, 153, 0, 0.8);
     font-size: 75%;
-    text-decoration: underline;
 }
 
 
