@@ -204,6 +204,18 @@ body {
     box-shadow:  2px 2px rgb(196, 195, 195);
 }
 
+.aboutMe p {
+    visibility: hidden;
+    margin-top: -3%;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-family: "Madimi One", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+
+  transition: 0.3s visibility ease-in all;
+}
+
 @keyframes hueShift {
     0% { filter: hue-rotate(0deg);}
     100% {filter: hue-rotate(360deg)};
@@ -246,7 +258,7 @@ body {
 
 
 .aboutMe h1 {
-    font-size: 80%;
+    font-size: 125%;
 }
 
 .socialBox h1 {
@@ -296,6 +308,8 @@ body {
         height: 40px;
         width: 100px;
         border-radius: 25px;
+        overflow-y: scroll;
+        font-size: 60%;
     }
 }
 
@@ -396,6 +410,10 @@ body {
 
     .profileBox:hover .profilePic {
         margin-top: 2%;
+    }
+
+    .profileBox:hover .aboutMe p {
+        visibility: visible;
     }
 
     .profilePic {
@@ -512,14 +530,27 @@ nav h2 {
 .artDiv {
     border: 2px solid orange;
     border-radius: 25px;
-    height: 80%;
+    height: 90%;
     width: 90%;
     padding-right: 1%;
-    background-color: rgba(255, 109, 109, 0.8);
+    background-color: rgba(255, 109, 109);
     display: flex;
     flex-wrap: wrap;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+.artDiv::-webkit-scrollbar {
+    width: 10px;
+}
+
+.artDiv::-webkit-scrollbar-track {
+    background: transparent;
+}
+.artDiv::-webkit-scrollbar-thumb {
+    background: aqua;
+    border-radius: 5px;
+    border: 1px solid rgb(52, 154, 250);
 }
 
 .popOutAni {
@@ -638,6 +669,10 @@ position: absolute;
    transform: rotate(180deg);
 }
 
+.profileBox:has(#upArrow:checked) .aboutMe p {
+    visibility: visible;
+}
+
 .profileBox:has(#upArrow:checked){
     height: 400px;
 }
@@ -675,7 +710,7 @@ position: absolute;
   font-weight: 700;
   font-style: normal;
   color: transparent;
-    background: linear-gradient(90deg,rgb(0, 238, 255),blue,cyan,rgb(0, 132, 255));
+    background: linear-gradient(90deg,rgb(0, 238, 255),blue,cyan);
     background-size: 300%;
     background-clip: text;
 
@@ -730,6 +765,19 @@ nav h2 {
     cursor: pointer;
     color: rgba(255, 153, 0, 0.8);
 }
+
+.postLogin {
+    cursor: pointer;
+    position: fixed;
+    z-index: 20;
+    bottom: 1%;
+    right: 1%;
+    font-size: 150%;
+  font-family: "Madimi One", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: rgba(255, 153, 0, 0.8);
+}
 }
 
 @media(max-width: 767px){
@@ -766,11 +814,30 @@ nav h2 {
     font-size: 75%;
 }
 
-
+.postLogin {
+    cursor: pointer;
+    position: fixed;
+    z-index: 20;
+    top: 1%;
+    right: 1%;
+    font-size: 80%;
+  font-family: "Madimi One", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: rgba(255, 153, 0, 0.8);
+}
 }
 
 @media (max-width: 767px){
     .profilePic{
         z-index: 5;
     }
+    .postLogin {
+        top: 0.75%;
+        right: 1%;
+        font-size: 80%;
+    }
+    .artDiv::-webkit-scrollbar {
+    width: 5px;
+}
 }
