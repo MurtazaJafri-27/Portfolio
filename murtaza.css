@@ -308,7 +308,6 @@ body {
         height: 40px;
         width: 100px;
         border-radius: 25px;
-        overflow-y: scroll;
         font-size: 60%;
     }
 }
@@ -669,6 +668,9 @@ position: absolute;
    transform: rotate(180deg);
 }
 
+.profileBox:has(#upArrow:checked) .aboutMe {
+    overflow-y: scroll;
+}
 .profileBox:has(#upArrow:checked) .aboutMe p {
     visibility: visible;
 }
