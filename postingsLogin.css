@@ -29,7 +29,6 @@ main {
     border-radius: 25px;
     background-color: rgb(238, 71, 99);
     box-shadow: 4px 4px 5px grey;
-    overflow-x: hidden;
     overflow-y: auto;
 }
 main::-webkit-scrollbar {
@@ -92,10 +91,21 @@ main h1 {
 .emailDiv {
     height: 5vh;
     width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: white;
     border-radius: 50px;
     align-self: center;
     flex-shrink: 0;
+}
+
+main input {
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    border: 2px solid aqua;
+    outline-color: blueviolet;
 }
 
 .passDiv {
@@ -115,6 +125,31 @@ main h1 {
     border-radius: 25px;
     align-self: center;
     flex-shrink: 0;
+}
+
+#loginButton {
+    margin-top: 5%;
+    width: 125px;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 25px;
+    background-color: salmon;
+    border: 1px solid red;
+
+    transition: 0.012s ease-in all;
+}
+
+#loginButton h1 {
+    font-size: 100%;
+}
+
+#loginButton:hover {
+    cursor: pointer;
+    background-color: limegreen;
+    transform: scale(1.025);
 }
 
 @media (min-width: 768px){
@@ -138,5 +173,9 @@ main h1 {
     }
     main h1 {
         font-size: 1.5vw;
+    }
+    #loginButton {
+        margin-top: 1%;
+        width: 8vw;
     }
 }

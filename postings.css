@@ -1,0 +1,87 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.loadingScreen {
+    height: 100vh;
+    background-color: rgb(0, 2, 24);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 3vh;
+    box-sizing: border-box;
+}
+
+.topSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50%;
+    gap: 10px;
+}
+
+.postingsLogo {
+    font-size: 300%;
+    margin: 0;
+    color: transparent;
+    background: linear-gradient(90deg, white, orange, orange);
+    -webkit-background-clip: text;
+    font-family: "Stack Sans Headline", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+.loadingDots {
+    margin: 0;
+    color: white;
+    animation: dotsLoading 2s linear infinite;
+}
+.loadingMessage {
+    margin: 0;
+    height: 5vh;
+    display: inline;
+    color: orange;
+    margin-top: 5%;
+    font-size: 100%;
+
+    animation: messageSlide 6s linear infinite;
+}
+
+@keyframes dotsLoading {
+    0%   { clip-path: inset(0 66% 0 0); }  /* shows 1 dot */
+    33%  { clip-path: inset(0 66% 0 0); }  /* holds on 1 dot */
+    34%  { clip-path: inset(0 33% 0 0); }  /* snaps to 2 dots */
+    66%  { clip-path: inset(0 33% 0 0); }  /* holds on 2 dots */
+    67%  { clip-path: inset(0 0% 0 0);  }   /* snaps to 3 dots */
+    100% { clip-path: inset(0 0% 0 0); }   /* holds on 3 dots */
+}
+
+@keyframes messageSlide {
+    0% { transform: translatex(-200vh);}
+    25% {transform: translateX(-5vh);}
+    40% { transform: translateX(0);}
+    100% { transform: translate(200vh);}
+}
+
+
+@media (min-width: 768px){
+    .topSection {
+         margin-top: 12%;
+    }
+    .postingsLogo {
+    font-size: 800%;
+    margin-bottom: 0;
+}
+.loadingDots {
+    font-size: 1000%;
+    margin-bottom: 1vh;
+}
+.loadingMessage {
+    margin-bottom: 5%;
+    font-size: 180%;
+}
+}
