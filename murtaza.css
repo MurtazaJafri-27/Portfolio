@@ -490,12 +490,11 @@ nav h2 {
     width: 300px;
     height: 50%;
     border-radius: 50px;
-    background-color: rgba(240,248,255,0.9);
+    background-color: rgba(154, 180, 202, 0.9);
 }
 
 .artworkView {
     z-index: 7;
-    visibility: hidden;
     border-radius: 25px;
     background-color: aquamarine;
     display: flex;
@@ -503,6 +502,7 @@ nav h2 {
     align-items: center;
     width: 90%;
     height: 90%;
+    transform: scale(0);
 
     transition: 0.3s ease-in-out all;
 }
@@ -553,21 +553,43 @@ nav h2 {
 }
 
 .popOutAni {
-    animation: popOut 3s linear forwards;
+    animation: popOut 1s ease-out forwards;
 }
 
 .popInAni {
-    animation: popIn 3s linear forwards;
+    animation: popIn 1.2s ease-in forwards;
 }
 
 @keyframes popOut {
-    50% { transform:  scale(1.025);}
-    100% { transform: scale(0);}
+    0% { transform:  scale(1); opacity: 1;}
+    100% { transform: scale(0); opacity: 0;}
 }
 
 @keyframes popIn {
-    100% { transform: scale(1);}
+    0% {opacity: 0;}
+    25% { transform: scale(0.8);}
+    100% {transform: scale(1); opacity: 1;}
 }
+
+.popOutFastAni {
+    animation: popOutFast 0.5s ease-out forwards;
+}
+
+.popInFastAni {
+    animation: popInFast 0.5s ease-in forwards;
+}
+
+@keyframes popOutFast {
+    0% { transform:  scale(1); opacity: 1; border-radius: 25px;}
+    100% { transform: scale(0); opacity: 0;}
+}
+
+@keyframes popInFast {
+    0% {opacity: 0; border-radius: 25px;}
+    25% { transform: scale(0.8);}
+    100% {transform: scale(1); opacity: 1;}
+}
+
 
 .artDiv img {
     margin-top: 2%;
@@ -775,9 +797,13 @@ nav h2 {
     bottom: 1%;
     right: 1%;
     font-size: 150%;
-  font-family: "Madimi One", sans-serif;
+  font-family: "Molle", cursive;
   font-weight: 700;
-  font-style: normal;
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: rgba(255, 153, 0, 0.8);
 }
 }
@@ -802,6 +828,11 @@ nav h2 {
     transition: 0.3s ease-in all;
 }
 
+nav::-webkit-scrollbar {
+    visibility: hidden;
+    width: 2px;
+    height: 2px;
+}
 .navLine {
     border-radius: 50px;
     margin-top: 3%;
@@ -821,11 +852,15 @@ nav h2 {
     position: fixed;
     z-index: 20;
     top: 1%;
-    right: 1%;
+    right: 6%;
     font-size: 80%;
-  font-family: "Madimi One", sans-serif;
+    font-family: "Molle", cursive;
   font-weight: 700;
-  font-style: normal;
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: rgba(255, 153, 0, 0.8);
 }
 }
@@ -835,11 +870,22 @@ nav h2 {
         z-index: 5;
     }
     .postLogin {
-        top: 0.75%;
-        right: 1%;
         font-size: 80%;
+        width: 20px;
     }
     .artDiv::-webkit-scrollbar {
     width: 5px;
 }
+}
+
+.artPopView {
+    z-index: 100;
+    position: fixed;
+    transform: scale(0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(59, 24, 7, 0.7);
 }

@@ -39,14 +39,58 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const artworkButton = document.getElementById('artworkButton');
-    const artworkContent = document.querySelector('.artworkView');
+const artworkContent = document.querySelector('.artworkView');
 
-    artworkButton.addEventListener('click',() => {
-        if(artworkContent.style.visibility == 'visible'){
-           artworkContent.style.visibility = 'hidden';
-        }
-        else {
-             artworkContent.style.visibility = 'visible';
-        }
-    })
+// handle clicks
+artworkButton.addEventListener('click', () => {
+    if(artworkContent.classList.contains('popOutAni')){
+    artworkContent.classList.remove('popOutAni');
+    } else if(artworkContent.classList.contains('popInAni')){
+        artworkContent.classList.remove('popInAni');
+    }
+    if(artworkContent.classList.contains('active')){
+        // currently visible, pop it out
+        artworkContent.classList.add('popOutAni');
+        artworkContent.classList.remove('active');
+    } else {
+        // currently hidden, pop it in
+        artworkContent.classList.add('popInAni');
+        artworkContent.classList.add('active');
+    }
+});
+
+      const images = document.querySelectorAll('.artDiv img');
+      const artPopView = document.querySelector('.artPopView');
+      const mobileMedia = window.matchMedia('(max-width: 767px)');
+
+      images.forEach(e => {
+        e.addEventListener('click', () => {
+            const newImg = document.createElement('img');
+            newImg.src = e.src;
+
+            if(mobileMedia.matches){
+                newImg.style.width = 70 + '%';
+                newImg.style.height = 'auto';
+            } else {
+                newImg.style.height = 70 + '%';
+                newImg.style.width = 'auto';
+            }
+
+            artPopView.appendChild(newImg);
+            artPopView.classList.remove('popOutFastAni');
+            artPopView.classList.add('popInFastAni');
+        })
+      })
+
+      artPopView.addEventListener('click', () => {
+        artPopView.classList.remove('popInFastAni');
+        artPopView.classList.add('popOutFastAni');
+        artPopView.replaceChildren();
+      })
+
+      const postsButton = document.getElementById('postsButton');
+
+      postsButton.addEventListener('click', () => {
+        window.location.href = 'postings.html';
+      });
 })

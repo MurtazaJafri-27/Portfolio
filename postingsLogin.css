@@ -127,6 +127,17 @@ main input {
     flex-shrink: 0;
 }
 
+#messageInput {
+    display: flex;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    border: 2px solid aqua;
+    outline-color: blueviolet;
+}
+
 #loginButton {
     margin-top: 5%;
     width: 125px;
