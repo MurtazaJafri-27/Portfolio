@@ -1,18 +1,30 @@
 body {
     padding: 0;
     margin: 0;
+    overflow: hidden;
+    background: linear-gradient(90deg, orange, white, orange)
 }
 
+/* LOADING SCREEN */
+
+
 .loadingScreen {
+    z-index: 999;
     height: 100vh;
+    width: 100vw;
     background-color: rgb(0, 2, 24);
     overflow: hidden;
     display: flex;
+    position: fixed;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding-bottom: 3vh;
-    box-sizing: border-box;
+
+    animation: 1.5s swipeRight 1s linear forwards;
+}
+
+@keyframes swipeRight {
+    70% { transform: translateX(50vw);}
+    100% { transform: translateX(200vw);}
 }
 
 .topSection {
@@ -38,6 +50,8 @@ body {
 .loadingDots {
     margin: 0;
     color: white;
+    position: fixed;
+    bottom: 5%;
     animation: dotsLoading 2s linear infinite;
 }
 .loadingMessage {
@@ -84,4 +98,77 @@ body {
     margin-bottom: 5%;
     font-size: 180%;
 }
+}
+
+/* PAGE */
+
+.pageWrapper {
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+}
+
+.bgVignette {
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    clip-path: ellipse(80% 55% at 50% 45%);
+}
+
+.secondLoader {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.267);
+    z-index: 50;
+    backdrop-filter: blur(10px);
+
+    animation: 5s blurFade 3s linear forwards;
+}
+
+@keyframes blurFade {
+    100% { backdrop-filter: blur(0px);}
+}
+
+.secondLoader h1 {
+    font-size: 200%;
+    margin-top: -10%;
+  font-family: "Chewy", system-ui;
+  font-weight: 700;
+  font-style: normal;
+  color: orange;
+
+  animation: 1.5s blurTextZoom 4s linear forwards;
+}
+
+@keyframes blurTextZoom {
+    100%  { visibility: hidden;}
+}
+
+@media(min-width: 768px){
+    .bgVignette {
+        clip-path: ellipse(65% 65% at 50% 40%);
+    }
+    
+.secondLoader h1 {
+    font-size: 500%;
+}
+
 }

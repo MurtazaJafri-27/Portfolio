@@ -39,25 +39,44 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const artworkButton = document.getElementById('artworkButton');
-const artworkContent = document.querySelector('.artworkView');
+    const artworkContent = document.querySelector('.artworkView');
+    const servicesButton = document.getElementById('servicesButton');
+    const servicesContent = document.querySelector('.servicesView');
+
 
 // handle clicks
-artworkButton.addEventListener('click', () => {
-    if(artworkContent.classList.contains('popOutAni')){
-    artworkContent.classList.remove('popOutAni');
-    } else if(artworkContent.classList.contains('popInAni')){
+servicesButton.addEventListener('click', () => {
+    if(artworkContent.classList.contains('popInAni')){
         artworkContent.classList.remove('popInAni');
-    }
-    if(artworkContent.classList.contains('active')){
-        // currently visible, pop it out
         artworkContent.classList.add('popOutAni');
-        artworkContent.classList.remove('active');
-    } else {
-        // currently hidden, pop it in
-        artworkContent.classList.add('popInAni');
-        artworkContent.classList.add('active');
+        servicesContent.classList.add('popInAni');
+    }
+    else if(servicesContent.classList.contains('popInAni')){
+        servicesContent.classList.remove('popInAni');
+        servicesContent.classList.add('popOutAni');
+    }
+    else {
+        servicesContent.classList.remove('popOutAni');
+        servicesContent.classList.add('popInAni');
     }
 });
+
+artworkButton.addEventListener('click', () => {
+    if(servicesContent.classList.contains('popInAni')){
+        servicesContent.classList.remove('popInAni');
+        servicesContent.classList.add('popOutAni');
+        artworkContent.classList.add('popInAni');
+    }
+    else if(artworkContent.classList.contains('popInAni')){
+        artworkContent.classList.remove('popInAni');
+        artworkContent.classList.add('popOutAni');
+    }
+    else {
+        artworkContent.classList.remove('popOutAni');
+        artworkContent.classList.add('popInAni');
+    }
+});
+
 
       const images = document.querySelectorAll('.artDiv img');
       const artPopView = document.querySelector('.artPopView');

@@ -507,6 +507,29 @@ nav h2 {
     transition: 0.3s ease-in-out all;
 }
 
+.servicesView {
+    z-index: 8;
+    border-radius: 25px;
+    background-color: rgb(235, 255, 248);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    transform: scale(0);
+
+    transition: 0.3s ease-in-out all;
+}
+
+.servicesView h1 {
+    font-size: 80%;
+    color: rgb(255, 109, 109);
+    font-family: "Madimi One", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 .artworkView h1 {
     margin: 0;
     margin-bottom: 2%;
@@ -580,8 +603,7 @@ nav h2 {
 }
 
 @keyframes popOutFast {
-    0% { transform:  scale(1); opacity: 1; border-radius: 25px;}
-    100% { transform: scale(0); opacity: 0;}
+    100% { transform: translateX(-500vw); opacity: 0;}
 }
 
 @keyframes popInFast {
@@ -806,6 +828,9 @@ nav h2 {
   align-items: center;
   color: rgba(255, 153, 0, 0.8);
 }
+.servicesView h1 {
+    font-size: 250%;
+}
 }
 
 @media(max-width: 767px){
@@ -888,4 +913,6 @@ nav h2 {
     height: 100vh;
     width: 100vw;
     background-color: rgba(59, 24, 7, 0.7);
+
+    transition: 0.3s popInFast ease-in-out all, 0.3s popOutFast ease-in-out all;
 }
